@@ -7,6 +7,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1605589745050950257, guid: eacc579d21de4254bb6e1869c9b96858,
+        type: 3}
+      propertyPath: speed
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 1605589745050950259, guid: eacc579d21de4254bb6e1869c9b96858,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -70,7 +75,7 @@ PrefabInstance:
     - target: {fileID: 1605589745050950270, guid: eacc579d21de4254bb6e1869c9b96858,
         type: 3}
       propertyPath: m_Name
-      value: Black Hole TEST
+      value: Black Hole TEST Variant
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eacc579d21de4254bb6e1869c9b96858, type: 3}

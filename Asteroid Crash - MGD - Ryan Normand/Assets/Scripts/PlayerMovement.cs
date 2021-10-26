@@ -14,13 +14,13 @@ public class PlayerMovement : MonoBehaviour
     public float tapRange;
     public float speed = 3f;
 
-
-    public Rigidbody rb;
-
+    public Transform middlelane;
+    public Transform rightlane;
+    public Transform leftlane;
 
     private void Start()
     {
-        rb = GetComponent<Rigidbody>();
+       
     }
 
 
@@ -49,24 +49,63 @@ public class PlayerMovement : MonoBehaviour
             {
                 if(Distance.x < -swipeRange)
                 {
-                    //transform.Translate(Vector3.left * Time.deltaTime * speed);
-                   
-                    rb.AddForce(-speed, 0, 0, ForceMode.Impulse);
-                    Debug.Log("Left");
+
+                    if (transform.position.x == -2)
+                    {
+                        //transform.position = Vector3.Lerp(transform.position, leftlane.position, Time.deltaTime);
+                        transform.position = new Vector3(-2, 4.74f, 7.32f);
+                       
+                    } 
+
+
+                    if (transform.position.x == 0)
+                    {
+                        //transform.position = Vector3.Lerp(transform.position, leftlane.position, Time.deltaTime);
+                        transform.position = new Vector3(-2, 4.74f, 7.32f);
+                        
+
+                    }
+
+                    if (transform.position.x == 2)
+                    {
+                        //transform.position = Vector3.Lerp(transform.position, middlelane.position, Time.deltaTime);
+                        transform.position = new Vector3(0, 4.74f, 7.32f);
+                        
+                    }
                     stopTouch = true;
+                    Debug.Log("Left");
                 }
                 else if (Distance.x > swipeRange)
                 {
-                    //transform.Translate(Vector3.right * Time.deltaTime * speed);
-                    
-                    rb.AddForce(speed, 0, 0, ForceMode.Impulse);
-                    Debug.Log("Right");
+                    if(transform.position.x == 2)
+                    {
+                        //transform.position = Vector3.Lerp(transform.position, rightlane.position, Time.deltaTime);
+                        transform.position = new Vector3(2, 4.74f, 7.32f);
+                        
+                    }
+
+                    if (transform.position.x == 0)
+                    {
+                        //transform.position = Vector3.Lerp(transform.position, rightlane.position, Time.deltaTime);
+                        transform.position = new Vector3(2, 4.74f, 7.32f);
+                       
+                    }
+
+                    if (transform.position.x == -2)
+                    {
+                        //transform.position = Vector3.Lerp(transform.position, middlelane.position, Time.deltaTime);
+                        transform.position = new Vector3(0, 4.74f, 7.32f);
+                        
+                    }
                     stopTouch = true;
+                    Debug.Log("Right");
                 }
-            }
+            } 
+
+
         }
 
-        if(Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Ended)
+        if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Ended)
         {
             stopTouch = false;
 
@@ -74,14 +113,14 @@ public class PlayerMovement : MonoBehaviour
 
             Vector3 Distance = endTouchPosition - startTouchPosition;
 
-            if(Mathf.Abs(Distance.x) < tapRange && Mathf.Abs(Distance.y) < tapRange)
+            if (Mathf.Abs(Distance.x) < tapRange && Mathf.Abs(Distance.y) < tapRange)
             {
                 Debug.Log("Tap");
             }
         }
 
-       
+
     }
 
- 
+
 }

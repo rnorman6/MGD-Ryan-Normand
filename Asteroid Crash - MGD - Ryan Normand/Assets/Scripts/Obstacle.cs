@@ -6,6 +6,7 @@ public class Obstacle : MonoBehaviour
 {
     public float speed = 5.0f;
 
+    public float outofbounds = 10f;
 
     // Start is called before the first frame update
     void Start()
@@ -16,15 +17,16 @@ public class Obstacle : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(Vector3.up * speed * Time.deltaTime, Space.World);       
+        transform.Translate(Vector3.up * speed * Time.deltaTime, Space.World);
+
+        if (transform.position.y > outofbounds)
+        {
+            Destroy(gameObject);
+        }
     }
 
-    private void OnCollisionEnter(Collision collision)
+   void OnTriggerEnter(Collider other)
     {
-        if(collision.gameObject.tag == "Player")
-        {
-            Destroy(this.gameObject);
-
-        }
+        Destroy(gameObject);
     }
 }

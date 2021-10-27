@@ -53,7 +53,7 @@ public class PlayerMovement : MonoBehaviour
                     if (transform.position.x == -2)
                     {
                         //transform.position = Vector3.Lerp(transform.position, leftlane.position, Time.deltaTime);
-                        transform.position = new Vector3(-2, 4.74f, 7.32f);
+                        transform.position = new Vector3(-2, 0, 0);
                        
                     } 
 
@@ -61,7 +61,7 @@ public class PlayerMovement : MonoBehaviour
                     if (transform.position.x == 0)
                     {
                         //transform.position = Vector3.Lerp(transform.position, leftlane.position, Time.deltaTime);
-                        transform.position = new Vector3(-2, 4.74f, 7.32f);
+                        transform.position = new Vector3(-2, 0, 0);
                         
 
                     }
@@ -69,7 +69,7 @@ public class PlayerMovement : MonoBehaviour
                     if (transform.position.x == 2)
                     {
                         //transform.position = Vector3.Lerp(transform.position, middlelane.position, Time.deltaTime);
-                        transform.position = new Vector3(0, 4.74f, 7.32f);
+                        transform.position = new Vector3(0, 0, 0);
                         
                     }
                     stopTouch = true;
@@ -80,21 +80,21 @@ public class PlayerMovement : MonoBehaviour
                     if(transform.position.x == 2)
                     {
                         //transform.position = Vector3.Lerp(transform.position, rightlane.position, Time.deltaTime);
-                        transform.position = new Vector3(2, 4.74f, 7.32f);
+                        transform.position = new Vector3(2, 0, 0);
                         
                     }
 
                     if (transform.position.x == 0)
                     {
                         //transform.position = Vector3.Lerp(transform.position, rightlane.position, Time.deltaTime);
-                        transform.position = new Vector3(2, 4.74f, 7.32f);
+                        transform.position = new Vector3(2, 0, 0);
                        
                     }
 
                     if (transform.position.x == -2)
                     {
                         //transform.position = Vector3.Lerp(transform.position, middlelane.position, Time.deltaTime);
-                        transform.position = new Vector3(0, 4.74f, 7.32f);
+                        transform.position = new Vector3(0, 0, 0);
                         
                     }
                     stopTouch = true;

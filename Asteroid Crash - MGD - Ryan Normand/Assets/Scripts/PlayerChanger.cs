@@ -23,7 +23,7 @@ public class PlayerChanger : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        value = size;
     }
 
     void OnTriggerEnter(Collider other)

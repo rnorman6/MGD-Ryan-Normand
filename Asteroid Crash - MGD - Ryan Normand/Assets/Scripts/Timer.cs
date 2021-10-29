@@ -9,11 +9,11 @@ public class Timer : MonoBehaviour
     public GameObject youloseText;
     public GameObject youwinText;
 
-    private float startTime = 40f;
+    private float startTime = 60f;
     public float currentTime = 0f;
     public float speed = 0.3f;
 
-    public static float size;
+    public static float size = 0f;
 
     void Start()
     {
@@ -48,12 +48,12 @@ public class Timer : MonoBehaviour
             Time.timeScale = 0;
             Debug.Log("Game Over!");
 
-            if (size >= 10)
+            if (GameObject.Find("PhaseOne").GetComponent<PlayerChanger>().value > 15 || GameObject.Find("PhaseTwo").GetComponent<PlayerChanger>().value > 15 || GameObject.Find("PhaseThree").GetComponent<PlayerChanger>().value > 15)
             {
                 youwinText.SetActive(true);
             }
 
-            if (size < 10)
+            if (GameObject.Find("PhaseOne").GetComponent<PlayerChanger>().value < 10 || GameObject.Find("PhaseTwo").GetComponent<PlayerChanger>().value < 10 || GameObject.Find("PhaseThree").GetComponent<PlayerChanger>().value < 10)
             {
                 youloseText.SetActive(true);
             }            
